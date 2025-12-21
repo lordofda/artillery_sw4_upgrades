@@ -26,9 +26,13 @@ TODO - add link and guide for swapping pins
 
 Take last part of macros from here 
 [artillery macros](https://github.com/urtziDV/ArtilleryX4Macros/tree/main/ARTILLERY%20(STOCK%20FIRMWARE)/PRO)
+TODO: upload macros.cfg
 
 ### Camera autofocus
 
 use camera_control macros
 TODO: upload configs
 
+### 1.7.0 update
+
+TODO: upload binary
