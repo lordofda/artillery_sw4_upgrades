@@ -36,3 +36,7 @@ TODO: upload configs
 ### 1.7.0 update
 
 TODO: upload binary
+
+### Additional resources
+
+This excellent guide: [grumats guide](https://github.com/grumat/artillery-x4-pro_config/wiki)
