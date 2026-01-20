@@ -40,3 +40,5 @@ TODO: upload binary
 ### Additional resources
 
 This excellent guide: [grumats guide](https://github.com/grumat/artillery-x4-pro_config/wiki)
+What I did following this guide was:
+  - Silencing fans, smart fan controller, screw tilt calculation, mcu and rpi temps and improved mesh
