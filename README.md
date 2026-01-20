@@ -42,3 +42,18 @@ TODO: upload binary
 This excellent guide: [grumats guide](https://github.com/grumat/artillery-x4-pro_config/wiki)
 What I did following this guide was:
   - Silencing fans, smart fan controller, screw tilt calculation, mcu and rpi temps and improved mesh
+
+## Tuning:
+
+[Ellis guide](https://ellis3dp.com/Print-Tuning-Guide/) - Still not done, but planning to
+
+### Leveling the bed
+
+Forget the paper method. Do this:
+  - create bed mesh
+  - check mesh for lifted, sagging corners
+  - adjust screws
+  - repeat
+
+  - or use screw tilt calculate from software mods
+
