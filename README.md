@@ -19,6 +19,7 @@ TODO - link printables
 ### Second usb
 
 TODO - add link and guide for swapping pins
+The usb cable is easy to buy on aliexpress, but it requires pin swap
 
 ## Software mods
 
@@ -31,7 +32,7 @@ TODO: upload macros.cfg
 ### Camera autofocus
 
 use camera_control macros
-TODO: upload configs
+Macros uploaded to repo
 
 ### 1.7.0 update
 
