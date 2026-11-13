@@ -1,0 +1,56 @@
+#!/bin/bash
+
+DEVICE="/dev/video6"
+
+toggle_focus_auto() {
+    current=$(v4l2-ctl -d $DEVICE -C focus_automatic_continuous | grep -o '[0-9]\+')
+    echo "Current mode: $current"
+    if [ "$current" -eq 1 ]; then
+        echo "Turning OFF automatic continuous focus..."
+        v4l2-ctl -d $DEVICE -c focus_automatic_continuous=0
+    else
+        echo "Turning ON automatic continuous focus..."
+        v4l2-ctl -d $DEVICE -c focus_automatic_continuous=1
+    fi
+}
+
+adjust_focus_absolute() {
+    current=$(v4l2-ctl -d $DEVICE -C focus_absolute | grep -o '[0-9]\+')
+    step=$1
+    new=$((current + step))
+    echo "Current focus: $current, new: $new"
+
+    # Clamp the value between 0 and 255 (adjust this range if needed)
+    if [ "$new" -lt 0 ]; then new=0; fi
+    if [ "$new" -gt 255 ]; then new=255; fi
+
+    echo "Setting focus_absolute to $new..."
+    v4l2-ctl -d $DEVICE -c focus_absolute=$new
+}
+
+# 🧭 Command-line arguments
+# Usage:
+# ./focus_control.sh toggle         --> toggles auto focus
+# ./focus_control.sh inc [value]   --> increases focus by value (default: 10)
+# ./focus_control.sh dec [value]   --> decreases focus by value (default: 10)
+echo "Received param: $1"
+case "$1" in
+    toggle)
+        toggle_focus_auto
+        ;;
+    inc)
+        step=${2:-10}
+        adjust_focus_absolute "$step"
+        ;;
+    dec)
+        step=${2:--10}
+        adjust_focus_absolute "$step"
+        ;;
+    *)
+        echo "Usage: $0 {toggle|inc [value]|dec [value]}"
+        exit 1
+        ;;
+esac
+
+
+
